@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="497" height="330" viewBox="0 0 497 330" xmlns="http://www.w3.org/2000/svg">
+<rect id="frame" x="0" y="0" width="497" height="330" fill="#f7f7f7" stroke="none" stroke-width="0"/>
+
+<!-- Association naitre -->
+<g>
+	<line x1="44" y1="44" x2="158" y2="44" stroke="#9970ab" stroke-width="1"/>
+	<text x="84" y="60" fill="#1b7837" font-family="Courier New" font-size="12">0,N</text>
+	<line x1="293" y1="165" x2="158" y2="44" stroke="#9970ab" stroke-width="1"/>
+	<text x="209" y="124.28" fill="#1b7837" font-family="Courier New" font-size="12">1,1</text>
+	<polygon points="237 114.81 224.06 111.27 231.04 109.47 232.07 102.33" fill="#9970ab" stroke-width="0"/>
+	<g>
+		<path d="M177 18 a14 14 90 0 1 14 14 V44 h-66 V32 a14 14 90 0 1 14 -14" fill="#c2a5cf" stroke="#c2a5cf" stroke-width="0"/>
+		<path d="M191 44 v12 a14 14 90 0 1 -14 14 H139 a14 14 90 0 1 -14 -14 V44 H66" fill="#e7d4e8" stroke="#e7d4e8" stroke-width="0"/>
+		<rect x="125" y="18" width="66" height="52" fill="none" rx="14" stroke="#9970ab" stroke-width="1.5"/>
+		<line x1="125" y1="44" x2="191" y2="44" stroke="#9970ab" stroke-width="1"/>
+		<text x="132" y="36.6" fill="#000" font-family="Courier New" font-size="14">naitre</text>
+	</g>
+</g>
+
+<!-- Association caractériser -->
+<g>
+	<line x1="436" y1="44" x2="293" y2="44" stroke="#9970ab" stroke-width="1"/>
+	<text x="356" y="60" fill="#1b7837" font-family="Courier New" font-size="12">0,N</text>
+	<line x1="293" y1="165" x2="293" y2="44" stroke="#9970ab" stroke-width="1"/>
+	<text x="298" y="86" fill="#1b7837" font-family="Courier New" font-size="12">1,1</text>
+	<polygon points="293 94 287 82 293 86 299 82" fill="#9970ab" stroke-width="0"/>
+	<g>
+		<path d="M337 18 a14 14 90 0 1 14 14 V44 h-116 V32 a14 14 90 0 1 14 -14" fill="#c2a5cf" stroke="#c2a5cf" stroke-width="0"/>
+		<path d="M351 44 v12 a14 14 90 0 1 -14 14 H249 a14 14 90 0 1 -14 -14 V44 H116" fill="#e7d4e8" stroke="#e7d4e8" stroke-width="0"/>
+		<rect x="235" y="18" width="116" height="52" fill="none" rx="14" stroke="#9970ab" stroke-width="1.5"/>
+		<line x1="235" y1="44" x2="351" y2="44" stroke="#9970ab" stroke-width="1"/>
+		<text x="242" y="36.6" fill="#000" font-family="Courier New" font-size="14">caractériser</text>
+	</g>
+</g>
+
+<!-- Association engendrer -->
+<g>
+	<line x1="293" y1="165" x2="158" y2="165" stroke="#9970ab" stroke-width="1"/>
+	<text x="209" y="181" fill="#1b7837" font-family="Courier New" font-size="12">0,N</text>
+	<polygon points="237 165 225 171 229 165 225 159" fill="#9970ab" stroke-width="0"/>
+	<line x1="44" y1="165" x2="158" y2="165" stroke="#9970ab" stroke-width="1"/>
+	<text x="84" y="181" fill="#1b7837" font-family="Courier New" font-size="12">0,N</text>
+	<g>
+		<path d="M190 139 a14 14 90 0 1 14 14 V165 h-92 V153 a14 14 90 0 1 14 -14" fill="#c2a5cf" stroke="#c2a5cf" stroke-width="0"/>
+		<path d="M204 165 v12 a14 14 90 0 1 -14 14 H126 a14 14 90 0 1 -14 -14 V165 H92" fill="#e7d4e8" stroke="#e7d4e8" stroke-width="0"/>
+		<rect x="112" y="139" width="92" height="52" fill="none" rx="14" stroke="#9970ab" stroke-width="1.5"/>
+		<line x1="112" y1="165" x2="204" y2="165" stroke="#9970ab" stroke-width="1"/>
+		<text x="120" y="157.6" fill="#000" font-family="Courier New" font-size="14">engendrer</text>
+		<text x="119" y="183.6" fill="#000" font-family="Courier New" font-size="14">parent</text>
+	</g>
+</g>
+
+<!-- Association cataloguer -->
+<g>
+	<line x1="44" y1="286" x2="158" y2="286" stroke="#9970ab" stroke-width="1"/>
+	<text x="80" y="302" fill="#1b7837" font-family="Courier New" font-size="12">0,N</text>
+	<line x1="293" y1="165" x2="158" y2="286" stroke="#9970ab" stroke-width="1"/>
+	<text x="209" y="213.72" fill="#1b7837" font-family="Courier New" font-size="12">1,1</text>
+	<polygon points="237 215.19 232.07 227.67 231.04 220.53 224.06 218.73" fill="#9970ab" stroke-width="0"/>
+	<g>
+		<path d="M194 260 a14 14 90 0 1 14 14 V286 h-100 V274 a14 14 90 0 1 14 -14" fill="#c2a5cf" stroke="#c2a5cf" stroke-width="0"/>
+		<path d="M208 286 v12 a14 14 90 0 1 -14 14 H122 a14 14 90 0 1 -14 -14 V286 H100" fill="#e7d4e8" stroke="#e7d4e8" stroke-width="0"/>
+		<rect x="108" y="260" width="100" height="52" fill="none" rx="14" stroke="#9970ab" stroke-width="1.5"/>
+		<line x1="108" y1="286" x2="208" y2="286" stroke="#9970ab" stroke-width="1"/>
+		<text x="116" y="278.6" fill="#000" font-family="Courier New" font-size="14">cataloguer</text>
+	</g>
+</g>
+
+<!-- Association définir -->
+<g>
+	<line x1="436" y1="286" x2="293" y2="286" stroke="#9970ab" stroke-width="1"/>
+	<text x="381" y="302" fill="#1b7837" font-family="Courier New" font-size="12">0,N</text>
+	<line x1="293" y1="165" x2="293" y2="286" stroke="#9970ab" stroke-width="1"/>
+	<text x="298" y="252" fill="#1b7837" font-family="Courier New" font-size="12">1,1</text>
+	<polygon points="293 236 299 248 293 244 287 248" fill="#9970ab" stroke-width="0"/>
+	<g>
+		<path d="M316 260 a14 14 90 0 1 14 14 V286 h-74 V274 a14 14 90 0 1 14 -14" fill="#c2a5cf" stroke="#c2a5cf" stroke-width="0"/>
+		<path d="M330 286 v12 a14 14 90 0 1 -14 14 H270 a14 14 90 0 1 -14 -14 V286 H74" fill="#e7d4e8" stroke="#e7d4e8" stroke-width="0"/>
+		<rect x="256" y="260" width="74" height="52" fill="none" rx="14" stroke="#9970ab" stroke-width="1.5"/>
+		<line x1="256" y1="286" x2="330" y2="286" stroke="#9970ab" stroke-width="1"/>
+		<text x="263" y="278.6" fill="#000" font-family="Courier New" font-size="14">définir</text>
+	</g>
+</g>
+
+<!-- Entity élevage -->
+<g>
+	<g>
+		<rect x="9" y="9" width="70" height="26" fill="#a6dba0" stroke="#a6dba0" stroke-width="0" opacity="1"/>
+		<rect x="9" y="35" width="70" height="44" fill="#d9f0d3" stroke="#d9f0d3" stroke-width="0" opacity="1"/>
+		<rect x="9" y="9" width="70" height="70" fill="none" stroke="#5aae61" stroke-width="1.5" opacity="1"/>
+		<line x1="9" y1="35" x2="79" y2="35" stroke="#5aae61" stroke-width="1"/>
+	</g>
+	<text x="14" y="27.6" fill="#000" font-family="Courier New" font-size="14">élevage</text>
+	<text x="14" y="53.6" fill="#000" font-family="Courier New" font-size="14">nom</text>
+	<text x="14" y="71.6" fill="#000" font-family="Courier New" font-size="14">adresse</text>
+</g>
+
+<!-- Entity robe -->
+<g>
+	<g>
+		<rect x="384" y="18" width="104" height="26" fill="#a6dba0" stroke="#a6dba0" stroke-width="0" opacity="1"/>
+		<rect x="384" y="44" width="104" height="26" fill="#d9f0d3" stroke="#d9f0d3" stroke-width="0" opacity="1"/>
+		<rect x="384" y="18" width="104" height="52" fill="none" stroke="#5aae61" stroke-width="1.5" opacity="1"/>
+		<line x1="384" y1="44" x2="488" y2="44" stroke="#5aae61" stroke-width="1"/>
+	</g>
+	<text x="419" y="36.6" fill="#000" font-family="Courier New" font-size="14">robe</text>
+	<text x="389" y="62.6" fill="#000" font-family="Courier New" font-size="14">description</text>
+</g>
+
+<!-- Entity ancêtre -->
+<g>
+	<g>
+		<rect x="9" y="139" width="70" height="26" fill="#a6dba0" stroke="#a6dba0" stroke-width="0" opacity="1"/>
+		<rect x="9" y="165" width="70" height="26" fill="#d9f0d3" stroke="#d9f0d3" stroke-width="0" opacity="1"/>
+		<rect x="9" y="139" width="70" height="52" fill="none" stroke="#5aae61" stroke-width="1.5" opacity="1"/>
+		<line x1="9" y1="165" x2="79" y2="165" stroke="#5aae61" stroke-width="1"/>
+	</g>
+	<text x="14" y="157.6" fill="#000" font-family="Courier New" font-size="14">ancêtre</text>
+	<text x="14" y="183.6" fill="#000" font-family="Courier New" font-size="14">lien</text>
+	<line x1="14" y1="186" x2="49" y2="186" stroke="#000" stroke-width="1"/>
+</g>
+
+<!-- Entity animal -->
+<g>
+	<g>
+		<rect x="237" y="94" width="112" height="26" fill="#a6dba0" stroke="#a6dba0" stroke-width="0" opacity="1"/>
+		<rect x="237" y="120" width="112" height="116" fill="#d9f0d3" stroke="#d9f0d3" stroke-width="0" opacity="1"/>
+		<rect x="237" y="94" width="112" height="142" fill="none" stroke="#5aae61" stroke-width="1.5" opacity="1"/>
+		<line x1="237" y1="120" x2="349" y2="120" stroke="#5aae61" stroke-width="1"/>
+	</g>
+	<text x="267" y="112.6" fill="#000" font-family="Courier New" font-size="14">animal</text>
+	<text x="242" y="138.6" fill="#000" font-family="Courier New" font-size="14">nom</text>
+	<text x="242" y="156.6" fill="#000" font-family="Courier New" font-size="14">anniversaire</text>
+	<text x="242" y="174.6" fill="#000" font-family="Courier New" font-size="14">taille</text>
+	<text x="242" y="192.6" fill="#000" font-family="Courier New" font-size="14">poids</text>
+	<text x="242" y="210.6" fill="#000" font-family="Courier New" font-size="14">chip</text>
+	<text x="242" y="228.6" fill="#000" font-family="Courier New" font-size="14">zb</text>
+</g>
+
+<!-- Entity race -->
+<g>
+	<g>
+		<rect x="13" y="251" width="62" height="26" fill="#a6dba0" stroke="#a6dba0" stroke-width="0" opacity="1"/>
+		<rect x="13" y="277" width="62" height="44" fill="#d9f0d3" stroke="#d9f0d3" stroke-width="0" opacity="1"/>
+		<rect x="13" y="251" width="62" height="70" fill="none" stroke="#5aae61" stroke-width="1.5" opacity="1"/>
+		<line x1="13" y1="277" x2="75" y2="277" stroke="#5aae61" stroke-width="1"/>
+	</g>
+	<text x="27" y="269.6" fill="#000" font-family="Courier New" font-size="14">race</text>
+	<text x="18" y="295.6" fill="#000" font-family="Courier New" font-size="14">nom</text>
+	<text x="18" y="313.6" fill="#000" font-family="Courier New" font-size="14">espèce</text>
+</g>
+
+<!-- Entity genre -->
+<g>
+	<g>
+		<rect x="409" y="260" width="54" height="26" fill="#a6dba0" stroke="#a6dba0" stroke-width="0" opacity="1"/>
+		<rect x="409" y="286" width="54" height="26" fill="#d9f0d3" stroke="#d9f0d3" stroke-width="0" opacity="1"/>
+		<rect x="409" y="260" width="54" height="52" fill="none" stroke="#5aae61" stroke-width="1.5" opacity="1"/>
+		<line x1="409" y1="286" x2="463" y2="286" stroke="#5aae61" stroke-width="1"/>
+	</g>
+	<text x="415" y="278.6" fill="#000" font-family="Courier New" font-size="14">genre</text>
+	<text x="414" y="304.6" fill="#000" font-family="Courier New" font-size="14">sex</text>
+</g>
+</svg>

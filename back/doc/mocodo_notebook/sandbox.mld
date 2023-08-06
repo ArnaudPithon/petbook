@@ -1,0 +1,20 @@
+%%mocodo
+:::::
+élevage: nom, adresse
+:::
+
+
+:
+engendrer: 
+:
+animal: nom, anniversaire, taille, poids, chip, zb
+:::
+robe: description
+:
+
+
+:
+race: nom
+:::::
+genre: description
+:

@@ -1,0 +1,53 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<style>
+  #mld .relation { font-variant: small-caps; font-weight: bold }
+  #mld .primary { text-decoration: underline }
+  #mld .foreign { font-style: oblique }
+  #mld .normal { }
+</style>
+</head>
+<body>
+<div id='mld'>
+<div>
+  <span class='relation'>animal</span> (
+    <span class='normal'>nom</span>,
+    <span class='normal'>anniversaire</span>,
+    <span class='normal'>taille</span>,
+    <span class='normal'>poids</span>,
+    <span class='normal'>chip</span>,
+    <span class='normal'>zb</span>
+  )
+</div>
+<div>
+  <span class='relation'>engendrer</span> (
+    <span class='primary'>lien</span>,
+    <span class='normal'>parent</span>
+  )
+</div>
+<div>
+  <span class='relation'>genre</span> (
+    <span class='normal'>sex</span>
+  )
+</div>
+<div>
+  <span class='relation'>race</span> (
+    <span class='normal'>nom</span>,
+    <span class='normal'>espèce</span>
+  )
+</div>
+<div>
+  <span class='relation'>robe</span> (
+    <span class='normal'>description</span>
+  )
+</div>
+<div>
+  <span class='relation'>élevage</span> (
+    <span class='normal'>nom</span>,
+    <span class='normal'>adresse</span>
+  )
+</div>
+</div>
+</body>
+</html>

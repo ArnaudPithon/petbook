@@ -1,0 +1,14 @@
+
+élevage: _nom[TEXT], adresse
+naitre, 0N élevage, 11> animal
+caractériser, 0N robe, 11> animal
+robe: _description
+
+ancêtre: lien
+engendrer, 0N> animal, 0N ancêtre : parent
+animal: _nom, anniversaire[date], taille[INTEGER], poids[INTEGER], chip, zb
+
+race: _nom, espèce
+cataloguer, 0N race, 11> animal
+définir, 0N genre, 11> animal
+genre: _sex

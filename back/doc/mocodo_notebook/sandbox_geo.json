@@ -1,0 +1,49 @@
+{
+  "width": 497,
+  "height": 330,
+  "cx": [
+    [ "élevage", 44 ],
+    [ "naitre", 158 ],
+    [ "caractériser", 293 ],
+    [ "robe", 436 ],
+    [ "ancêtre", 44 ],
+    [ "engendrer", 158 ],
+    [ "animal", 293 ],
+    [ "race", 44 ],
+    [ "cataloguer", 158 ],
+    [ "définir", 293 ],
+    [ "genre", 436 ]
+  ],
+  "cy": [
+    [ "élevage", 44 ],
+    [ "naitre", 44 ],
+    [ "caractériser", 44 ],
+    [ "robe", 44 ],
+    [ "ancêtre", 165 ],
+    [ "engendrer", 165 ],
+    [ "animal", 165 ],
+    [ "race", 286 ],
+    [ "cataloguer", 286 ],
+    [ "définir", 286 ],
+    [ "genre", 286 ]
+  ],
+  "shift": [
+    [ "naitre,élevage,0", 0 ],
+    [ "naitre,animal,0", 0 ],
+    [ "caractériser,robe,0", 0 ],
+    [ "caractériser,animal,0", 0 ],
+    [ "engendrer,animal,0", 0 ],
+    [ "engendrer,ancêtre,0", 0 ],
+    [ "cataloguer,race,0", 0 ],
+    [ "cataloguer,animal,0", 0 ],
+    [ "définir,genre,0", 0 ],
+    [ "définir,animal,0", 0 ]
+  ],
+  "ratio": [
+    [ "naitre,animal,0", 1.0 ],
+    [ "caractériser,animal,0", 1.0 ],
+    [ "engendrer,animal,0", 1.0 ],
+    [ "cataloguer,animal,0", 1.0 ],
+    [ "définir,animal,0", 1.0 ]
+  ]
+}

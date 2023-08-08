@@ -1,4 +1,4 @@
-# dogbook
+# petbook
 
 ## Use Cases
 
@@ -19,3 +19,9 @@
 | user | filtrer les animaux par robe | |
 | user | filtrer les animaux par genre | |
 | user | filtrer les animaux par race | |
+| user | choisir si une fiche est publique ou privée | contrôler ses informations |
+| user | pouvoir faire des brouillons | contrôler quand publier |
+| user | conserver un log des actions de soins / santé | faire office de carnet de santé |
+| user | conserver un log des mesures de poids / taille | |
+| user | visualiser l'évolution des mesures au cours du temps | |
+| user | savoir quand effectuer la prochaine action de santé / soin (vermifuge, vaccin, antipuce) | aider le suivi |

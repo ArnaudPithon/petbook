@@ -1,65 +1,99 @@
+-- On travaille en tant que petbook
+SET ROLE petbook;
+
 BEGIN;
 
-    DROP TABLE IF EXISTS "parent";
-    --DROP TABLE IF EXISTS "ancestor";
-    DROP TABLE IF EXISTS "animal";
-    DROP TABLE IF EXISTS "breeder";
-    DROP TABLE IF EXISTS "color";
-    DROP TABLE IF EXISTS "gender";
-    DROP TABLE IF EXISTS "race";
+    -- Nettoyage
 
-    CREATE TABLE "breeder" (
-        "id" INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
-        "name" TEXT UNIQUE NOT NULL,
-        "adress" TEXT NULL,
-        "created_at" TIMESTAMP NOT NULL DEFAULT NOW(),
-        "updated_at" TIMESTAMP
+    DROP TABLE IF EXISTS parent;
+    DROP TABLE IF EXISTS metering;
+    DROP TABLE IF EXISTS picture;
+    DROP TABLE IF EXISTS pet;
+    DROP TABLE IF EXISTS breeder;
+    DROP TABLE IF EXISTS color;
+    DROP TABLE IF EXISTS gender;
+    DROP TABLE IF EXISTS race;
+
+    DROP TYPE IF EXISTS SEX;
+    DROP TYPE IF EXISTS TIE;
+
+    -- création de types
+
+    CREATE TYPE SEX AS ENUM ('0', '1', '2'); -- unknown, mâle, femelle - Http://en.wikipedia.org/wiki/ISO_5218
+    CREATE TYPE TIE AS ENUM ('0', '1', '2'); -- unknown, father, mother
+    -- La création de types ENUM est une alternative à ce type d'écriture :
+    --tie CHAR(1) NOT NULL CHECK (tie IN ('0', '1', '2')),
+
+    -- création des tables
+
+    CREATE TABLE breeder (
+        id INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
+        name TEXT UNIQUE NOT NULL,
+        adress TEXT NULL,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+        updated_at TIMESTAMPTZ
     );
 
-    CREATE TABLE "color" (
-        "id" SMALLINT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
-        "description" TEXT UNIQUE NOT NULL,
-        "created_at" TIMESTAMP NOT NULL DEFAULT NOW(),
-        "updated_at" TIMESTAMP
+    CREATE TABLE color (
+        id SMALLINT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
+        description TEXT UNIQUE NOT NULL,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+        updated_at TIMESTAMPTZ
     );
 
-    CREATE TABLE "gender" (
-        "sex" CHAR(1) UNIQUE NOT NULL CHECK (sex IN ('0', '1', '2')) -- Http://en.wikipedia.org/wiki/ISO_5218
+    CREATE TABLE gender (
+        sex SEX UNIQUE NOT NULL
     );
 
-    CREATE TABLE "race" (
-        "id" SMALLINT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
-        "description" TEXT NOT NULL,
-        "species" TEXT NOT NULL
+    CREATE TABLE race (
+        id INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
+        name TEXT NOT NULL,
+        species TEXT NOT NULL,
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+        updated_at TIMESTAMPTZ
     );
 
-    CREATE TABLE "animal" (
-        "id" INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
-        "name" TEXT NOT NULL,
-        "birthday" DATE NOT NULL,
-        "size" SMALLINT NULL,
-        "weight" SMALLINT NULL,
-        "color_id" SMALLINT REFERENCES color(id),
-        "gender_sex" CHAR(1) REFERENCES gender(sex),
-        "race_id" SMALLINT REFERENCES race(id),
-        "breeder" INT REFERENCES breeder(id),
-        "created_at" TIMESTAMP NOT NULL DEFAULT NOW(),
-        "updated_at" TIMESTAMP
+    CREATE TABLE pet (
+        id INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
+        name TEXT NOT NULL,
+        nickname TEXT NULL,
+        birthday DATE NULL,
+        color_id SMALLINT REFERENCES color(id),
+        gender_sex SEX REFERENCES gender(sex),
+        race_id INT REFERENCES race(id),
+        breeder_id INT REFERENCES breeder(id),
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+        updated_at TIMESTAMPTZ
     );
 
-    -- CREATE TABLE "ancestor" (
-    --     "id" INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
-    --     "animal_id" INT REFERENCES animal(id)
-    -- );
+    CREATE TABLE parent (
+        id INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
+        tie TIE NOT NULL,
+        ancestor_id INT REFERENCES pet(id),
+        pet_id INT REFERENCES pet(id),
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+        updated_at TIMESTAMPTZ
+    );
 
-    CREATE TABLE "parent" (
-        "id" INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
-        "tie" CHAR(1) NOT NULL CHECK (tie IN ('0', '1', '2')),  -- unknown, father, mother
-        -- Est-il vraiment utile de passer par une table intermédiaire ?
-        --"ancestor_id" INT NOT NULL REFERENCES ancestor(id),
-        -- Je dois pouvoir indiquer plus simplement :
-        "ancestor_id" INT NOT NULL REFERENCES animal(id),
-        "animal_id" INT NOT NULL REFERENCES animal(id)
+    create table metering (
+        id INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
+        date TIMESTAMPTZ NOT NULL,
+        weight SMALLINT NULL,
+        size SMALLINT NULL,
+        pet_id INT REFERENCES pet(id),
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+        updated_at TIMESTAMPTZ
+    );
+
+    create table picture (
+        id INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
+        file TEXT NOT NULL,
+        description TEXT,
+        pet_id INT REFERENCES pet(id),
+        created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+        updated_at TIMESTAMPTZ
     );
 
     COMMIT;
+
+RESET ROLE;

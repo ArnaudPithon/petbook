@@ -4,9 +4,11 @@ naitre, 0N élevage, 11> animal
 caractériser, 0N robe, 11> animal
 robe: _description
 
-ancêtre: lien
-engendrer, 0N> animal, 0N ancêtre : parent
-animal: _nom, anniversaire[date], taille[INTEGER], poids[INTEGER], chip, zb
+parenté, 0N< animal, 0N animal : lien
+animal: _nom, pseudonyme, anniversaire[date]
+mesurer, 0N animal, 11> mesure
+mesure: _date, poids, taille
+
 
 race: _nom, espèce
 cataloguer, 0N race, 11> animal

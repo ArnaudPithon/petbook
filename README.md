@@ -1,5 +1,15 @@
 # petbook
 
+# présentation
+
+*petbook* est destiné à être un site pour suivre et
+échanger sur nos animaux de compagnies.
+
+Ses fonctionnalités premières permettent de connaitre
+les relations de parentés entre les animaux et d'avoir
+un suivi sur les soins courants à leur prodiguer
+(antipuce, vermifuge, …).
+
 ## Use Cases
 
 | qui | quoi | pourquoi |

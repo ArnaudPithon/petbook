@@ -158,10 +158,10 @@ BEGIN;
     ( '2023-07-29', '16', null,
         (SELECT id FROM "pet" WHERE "name" = 'Usul')
     ),
-    ( '2023-04-08', null, '67',
+    ( '2023-04-08', '45', '67',
         (SELECT id FROM "pet" WHERE "name" = 'Northface')
     ),
-    ( '2023-04-08', null, '59',
+    ( '2023-04-08', '32', '59',
         (SELECT id FROM "pet" WHERE "name" = 'Peeta')
     );
 

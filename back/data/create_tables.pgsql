@@ -11,7 +11,6 @@ BEGIN;
     DROP TABLE IF EXISTS pet;
     DROP TABLE IF EXISTS breeder;
     DROP TABLE IF EXISTS color;
-    DROP TABLE IF EXISTS gender;
     DROP TABLE IF EXISTS race;
 
     DROP TYPE IF EXISTS SEX;
@@ -41,10 +40,6 @@ BEGIN;
         updated_at TIMESTAMPTZ
     );
 
-    CREATE TABLE gender (
-        sex SEX UNIQUE NOT NULL
-    );
-
     CREATE TABLE race (
         id INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
         name TEXT NOT NULL,
@@ -60,7 +55,6 @@ BEGIN;
         birthday DATE NULL,
         sex SEX NOT NULL,
         color_id SMALLINT REFERENCES color(id),
-        gender_sex SEX REFERENCES gender(sex),
         race_id INT REFERENCES race(id),
         breeder_id INT REFERENCES breeder(id),
         created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),

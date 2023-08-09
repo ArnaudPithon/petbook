@@ -58,6 +58,7 @@ BEGIN;
         name TEXT NOT NULL,
         nickname TEXT NULL,
         birthday DATE NULL,
+        sex SEX NOT NULL,
         color_id SMALLINT REFERENCES color(id),
         gender_sex SEX REFERENCES gender(sex),
         race_id INT REFERENCES race(id),
@@ -78,8 +79,8 @@ BEGIN;
     create table metering (
         id INT GENERATED ALWAYS AS IDENTITY NOT NULL PRIMARY KEY,
         date TIMESTAMPTZ NOT NULL,
-        weight SMALLINT NULL,
-        size SMALLINT NULL,
+        weight real NULL,   -- kilogrammes
+        size SMALLINT NULL, -- centimètres
         pet_id INT REFERENCES pet(id),
         created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
         updated_at TIMESTAMPTZ

@@ -2,6 +2,8 @@ SET ROLE petbook;
 
 BEGIN;
 
+    -- éleveurs
+
     INSERT INTO
     breeder ("name", "adress")
     VALUES
@@ -10,80 +12,157 @@ BEGIN;
         'chemin de la Goutte des Forges F - 90200 Lepuix'
     );
 
+    -- robes
+
     INSERT INTO
     color ("description")
     VALUES
-    ('noir');
+    ('noir'),
+    ('blanc'),
+    ('gris'),
+    ('crème'),
+    ('gris argenté charbonné, poil long'),
+    ('noir et feu, poil long'),
+    ('sable (argenté charbonné), poil long'),
+    ('sable charbonné, poil long'),
+    ('noir et argenté, poil long'),
+    ('gris/sable charbonné, poil long') ;
+
+    -- races
 
     INSERT INTO
-    gender ("sex")
+    race ("name", "species")
     VALUES
-    ('0'), ('1'), ('2');
+    ('inconnue', 'chien'),
+    ('inconnue', 'chat'),
+    ('Aldeutscher Schäferhund', 'chien'),
+    ('Westie', 'chien'),
+    ('British Short Hair', 'chat'),
+    ('Main Coon', 'chat');
+
+    -- mine pets
 
     INSERT INTO
-    race ("description", "species")
-    VALUES
-    ("inconnue", "chien"),
-    ("inconnue", "chat"),
-    ("Aldeutscher Schäferhund", "chien"),
-    ("Westie", "chien"),
-    ("British Short Hair", "chat"),
-    ("Main Coon", "chat");
-
-    INSERT INTO
-    animal
+    pet
     (
         "name", "birthday",
-        "color_id", "gender_sex", "race_id", "breeder_id"
+        "color_id", "sex", "race_id", "breeder_id"
     )
     values
     (
-        "Usul", "2023-04-08",
+        'Usul', '2023-04-08',
         (SELECT id FROM "color"
             WHERE "description" = 'noir'),
         '2',
         (SELECT id FROM "race"
-            WHERE "description" = 'Aldeutscher Schäferhund'),
+            WHERE "name" = 'Aldeutscher Schäferhund'),
         (SELECT id FROM "breeder"
             WHERE "name" = 'la Légende du Loup Noir')
     );
     INSERT INTO
-    animal
+    pet
     (
-        "name", "pseudo", "birthday",
-        "color_id", "gender_sex", "race_id", "breeder_id"
+        "name", "nickname", "birthday",
+        "color_id", "sex", "race_id", "breeder_id"
     )
     values
     (
-        "Sir Archi", "Archi", "2021",
-        null,
+        'Sir Archi', 'Archi', '2021-01-01',
+        (SELECT id FROM "color"
+            WHERE "description" = 'blanc'),
         '1',
         (SELECT id FROM "race"
-            WHERE "description" = 'Westie'),
+            WHERE "name" = 'Westie'),
         null
     ),
     (
-        "Napolitain", "Leo", "2019",
-        null,
+        'Napolitain', 'Leo', '2019-01-01',
+        (SELECT id FROM "color"
+            WHERE "description" = 'crème'),
         '1',
         (SELECT id FROM "race"
-            WHERE "description" = 'British Short Hair'),
+            WHERE "name" = 'British Short Hair'),
         null
     );
     INSERT INTO
-    animal
+    pet
     (
         "name", "birthday",
-        "color_id", "gender_sex", "race_id", "breeder_id"
+        "color_id", "sex", "race_id", "breeder_id"
     )
     values
     (
-        'Umber', "2023",
-        null,
+        'Umber', '2023-01-01',
+        (SELECT id FROM "color"
+            WHERE "description" = 'gris'),
         '2',
         (SELECT id FROM "race"
-            WHERE "description" = 'Main Coon'),
+            WHERE "name" = 'Main Coon'),
         null
+    );
+
+    -- other pets
+
+    INSERT INTO
+    pet
+    (
+        "name", "birthday",
+        "color_id", "sex", "race_id"
+    )
+    values
+    (
+        'Northface', '2017-05-10',
+        (SELECT id FROM "color"
+            WHERE "description" = 'gris argenté charbonné, poil long'),
+        '1',
+        (SELECT id FROM "race"
+            WHERE "name" = 'Aldeutscher Schäferhund')
+    ),
+    (
+        'Peeta', '2019-02-09',
+        (SELECT id FROM "color"
+            WHERE "description" = 'noir et feu, poil long'),
+        '2',
+        (SELECT id FROM "race"
+            WHERE "name" = 'Aldeutscher Schäferhund')
+    );
+
+    -- parentés
+
+    INSERT INTO
+    parent ( "tie", "ancestor_id", "pet_id" )
+    VALUES
+    (
+        '1',
+        (SELECT id FROM "pet"
+            WHERE "name" = 'Northface'),
+        (SELECT id FROM "pet"
+            WHERE "name" = 'Usul')
+    ),
+    (
+        '2',
+        (SELECT id FROM "pet"
+            WHERE "name" = 'Peeta'),
+        (SELECT id FROM "pet"
+            WHERE "name" = 'Usul')
+    );
+
+    -- tailes, poids
+
+    INSERT INTO
+    metering ( "date", "weight", "size", "pet_id" )
+    VALUES
+    ( '2023-06-28', '10.2', null,
+        (SELECT id FROM "pet" WHERE "name" = 'Usul')
+    ),
+    ( '2023-07-29', '16', null,
+        (SELECT id FROM "pet" WHERE "name" = 'Usul')
+    ),
+    ( '2023-04-08', null, '67',
+        (SELECT id FROM "pet" WHERE "name" = 'Northface')
+    ),
+    ( '2023-04-08', null, '59',
+        (SELECT id FROM "pet" WHERE "name" = 'Peeta')
     );
 
     COMMIT;

@@ -1,22 +1,16 @@
-MODULES = express ejs dotenv
-MODULES_DEV = nodemon
+backdir := back
+frontdir := front
 
-nope:
-	@echo 'Do nothing !'
+MAKE = /usr/bin/make
 
-all: install
+all: back front
 
-init: package.json
-	mkdir -p views/partials
+init: back-init front-init
 
-package.json:
-	pnpm init
+back-init:
+	$(MAKE) -C $(backdir) init
 
-install: package.json
-	pnpm install $(MODULES)
-	pnpm install -D $(MODULES_DEV)
+front-init:
+	$(MAKE) -C $(frontdir) init
 
-start:
-	npm start
-
-.PHONY: install init all start nope
+.PHONY: install init all start database tables populate

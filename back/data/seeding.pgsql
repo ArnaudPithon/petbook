@@ -19,8 +19,8 @@ BEGIN;
     VALUES
     ('noir'),
     ('blanc'),
-    ('gris'),
-    ('crème'),
+    ('Bleu tabby ticked et blanc'),
+    ('Golden seal point'),
     ('gris argenté charbonné, poil long'),
     ('noir et feu, poil long'),
     ('sable (argenté charbonné), poil long'),
@@ -67,7 +67,7 @@ BEGIN;
     )
     values
     (
-        'Sir Archi', 'Archi', '2021-01-01',
+        'Sir Archi', 'Archi', '2021-03-19',
         (SELECT id FROM "color"
             WHERE "description" = 'blanc'),
         '1',
@@ -76,9 +76,9 @@ BEGIN;
         null
     ),
     (
-        'Napolitain', 'Leo', '2019-01-01',
+        'Napolitain', 'Leo', '2017-03-14',
         (SELECT id FROM "color"
-            WHERE "description" = 'crème'),
+            WHERE "description" = 'Golden seal point'),
         '1',
         (SELECT id FROM "race"
             WHERE "name" = 'British Short Hair'),
@@ -92,9 +92,9 @@ BEGIN;
     )
     values
     (
-        'Umber', '2023-01-01',
+        'Umber', '2023-01-26',
         (SELECT id FROM "color"
-            WHERE "description" = 'gris'),
+            WHERE "description" = 'Bleu tabby ticked et blanc'),
         '2',
         (SELECT id FROM "race"
             WHERE "name" = 'Main Coon'),

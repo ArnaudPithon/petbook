@@ -7,6 +7,7 @@ BEGIN;
     INSERT INTO
     breeder ("name", "adress")
     VALUES
+    ( 'unknown', null ),
     (
         'la Légende du Loup Noir',
         'chemin de la Goutte des Forges F - 90200 Lepuix'
@@ -17,6 +18,7 @@ BEGIN;
     INSERT INTO
     color ("description")
     VALUES
+    ('unknown'),
     ('noir'),
     ('blanc'),
     ('Bleu tabby ticked et blanc'),
@@ -45,60 +47,45 @@ BEGIN;
     INSERT INTO
     pet
     (
-        "name", "birthday",
-        "color_id", "sex", "race_id", "breeder_id"
+        "name", "nickname", "birthday", "sex",
+        "color_id", "race_id", "breeder_id"
     )
     values
     (
-        'Usul', '2023-04-08',
+        'Usul', null, '2023-04-08', '2',
         (SELECT id FROM "color"
             WHERE "description" = 'noir'),
-        '2',
         (SELECT id FROM "race"
             WHERE "name" = 'Aldeutscher Schäferhund'),
         (SELECT id FROM "breeder"
             WHERE "name" = 'la Légende du Loup Noir')
-    );
-    INSERT INTO
-    pet
-    (
-        "name", "nickname", "birthday",
-        "color_id", "sex", "race_id", "breeder_id"
-    )
-    values
-    (
-        'Sir Archi', 'Archi', '2021-03-19',
-        (SELECT id FROM "color"
-            WHERE "description" = 'blanc'),
-        '1',
-        (SELECT id FROM "race"
-            WHERE "name" = 'Westie'),
-        null
     ),
     (
-        'Napolitain', 'Leo', '2017-03-14',
-        (SELECT id FROM "color"
-            WHERE "description" = 'Golden seal point'),
-        '1',
-        (SELECT id FROM "race"
-            WHERE "name" = 'British Short Hair'),
-        null
-    );
-    INSERT INTO
-    pet
-    (
-        "name", "birthday",
-        "color_id", "sex", "race_id", "breeder_id"
-    )
-    values
-    (
-        'Umber', '2023-01-26',
+        'Umber', null, '2023-01-26', '2',
         (SELECT id FROM "color"
             WHERE "description" = 'Bleu tabby ticked et blanc'),
-        '2',
         (SELECT id FROM "race"
             WHERE "name" = 'Main Coon'),
-        null
+        (SELECT id FROM "breeder"
+            WHERE "name" = 'unknown')
+    ),
+    (
+        'Sir Archi', 'Archi', '2021-03-19', '1',
+        (SELECT id FROM "color"
+            WHERE "description" = 'blanc'),
+        (SELECT id FROM "race"
+            WHERE "name" = 'Westie'),
+        (SELECT id FROM "breeder"
+            WHERE "name" = 'unknown')
+    ),
+    (
+        'Napolitain', 'Leo', '2017-03-14', '1',
+        (SELECT id FROM "color"
+            WHERE "description" = 'Golden seal point'),
+        (SELECT id FROM "race"
+            WHERE "name" = 'British Short Hair'),
+        (SELECT id FROM "breeder"
+            WHERE "name" = 'unknown')
     );
 
     -- other pets
@@ -107,7 +94,7 @@ BEGIN;
     pet
     (
         "name", "birthday",
-        "color_id", "sex", "race_id"
+        "color_id", "sex", "race_id", "breeder_id"
     )
     values
     (
@@ -116,7 +103,9 @@ BEGIN;
             WHERE "description" = 'gris argenté charbonné, poil long'),
         '1',
         (SELECT id FROM "race"
-            WHERE "name" = 'Aldeutscher Schäferhund')
+            WHERE "name" = 'Aldeutscher Schäferhund'),
+        (SELECT id FROM "breeder"
+            WHERE "name" = 'la Légende du Loup Noir')
     ),
     (
         'Peeta', '2019-02-09',
@@ -124,7 +113,9 @@ BEGIN;
             WHERE "description" = 'noir et feu, poil long'),
         '2',
         (SELECT id FROM "race"
-            WHERE "name" = 'Aldeutscher Schäferhund')
+            WHERE "name" = 'Aldeutscher Schäferhund'),
+        (SELECT id FROM "breeder"
+            WHERE "name" = 'la Légende du Loup Noir')
     );
 
     -- parentés

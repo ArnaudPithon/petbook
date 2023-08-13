@@ -4,8 +4,8 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app/main.js"
+    "start": "nodemon app/main.js",
+    "test": "jest --detectOpenHandles"
   },
   "keywords": [],
   "author": "icarios",
